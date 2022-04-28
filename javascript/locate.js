@@ -28,7 +28,7 @@
  *   location.  If not, the GPS interface is queried to obtain the current location.
  * 
  */
-var base_url = "https://bristoltrees.space/trees/locate-3.xq?";
+var base_url = "https://bristoltrees.space/Locate?";
 
 var compass_points = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
 var compass_points_text = [
@@ -1005,7 +1005,8 @@ function logout() {
       }); 
 }
 
-function startup() {    
+function startup() {  
+     init_tabs();
      add_photo_submit();  
      login_status();
      find_trees();
