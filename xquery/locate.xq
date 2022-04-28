@@ -18,11 +18,10 @@ let $rcommon := request:get-parameter("common",())
 return
 <html>
     <head>    
-        <link rel="stylesheet" type="text/css" href="../assets/mobile.css"></link>
+        <link rel="stylesheet" type="text/css" href="/trees/Locate/assets/mobile.css"></link>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script src="https://maps.googleapis.com/maps/api/js?key={$tp:googlekey}"></script>
         <script type="text/javascript">
-        var ntabs=5;
         var statesx = [  
            {string-join(
                for $state in $tp:states/state
@@ -32,11 +31,11 @@ return
            }
         ];
         </script>
-        <script src="../javascript/locate.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../javascript/controls.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/trees/Locate/javascript/locate.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/trees/Locate/javascript/controls.js" type="text/javascript" charset="utf-8"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-     <link href="../assets/7sisters.png" rel="icon" sizes="128x128" />
-    <link rel="shortcut icon" type="image/png" href="../assets/7sisters.png"/>
+     <link href="/trees/assets/7sisters.png" rel="icon" sizes="128x128" />
+    <link rel="shortcut icon" type="image/png" href="/trees/assets/7sisters.png"/>
     </head>
     <body  onload="startup()">       
        <div>
@@ -54,7 +53,7 @@ return
            
             </div>
         <hr/>
-          <div id="tab0"  style="display:none"> 
+          <div id="tab0" class="tab" style="display:none"> 
              <h3><span id="username_status"></span></h3>
              <div id="login_form" name="login_form" style="display:none">  
                 email address <input name="email" id="email" size="30"/>
@@ -131,7 +130,7 @@ return
                             </span></th><td><input type="text" id="rlatin" value="{$rlatin}" /></td></tr>
               </table>
         </div>
-        <div id="tab1">  
+        <div id="tab1" class="tab">  
           <div>
             <button id="here" class="button" onclick="centre_here()">Centre on me</button>&#160;<span class="tooltip">
                                 <img src="/trees/assets/Info_Symbol.png" width="15px"/>
@@ -161,7 +160,7 @@ return
           <div id="map_canvas" ></div>
        </div>
  
-        <div id="tab2"  style="display:none">
+        <div id="tab2" class="tab" >
          <h3>Using the website</h3>
              <div>This website can be used on a laptop or a mobile phone with GPS. On a mobile phone, you will need to have mobile data turned on because in some cases the website loads new trees as you move.</div>
          <h3>How to find trees</h3>
@@ -244,7 +243,7 @@ return
        <div>A <a href="https://bristoltrees.space" target="_blank" class="external">Trees of Bristol</a> production.</div>
    
        </div>               
-       <div id="tab3" style="display:none">
+       <div id="tab3" class="tab">
      <h3><span id="edit-mode"/> Tree</h3> 
      <table style='font-size: 12pt;'>
      <tr><th>Id</th><td><input type='text' id='id' value='' style="background-color:lightgrey"/> </td></tr>
@@ -295,7 +294,7 @@ return
       </table>
       </div>
  
-     <div id="tab4" style="display:none">
+     <div id="tab4" class="tab">
       <h3>Add Photo</h3> 
       <div> ?  optional field</div>
      <form id="photoForm"  >
